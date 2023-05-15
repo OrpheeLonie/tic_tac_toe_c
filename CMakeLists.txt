@@ -4,6 +4,8 @@ project(tic_tac_toe)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 20)
 
+add_compile_options(-Wall -Wextra -Werror -pedantic)
+
 include(FetchContent)
 FetchContent_Declare(
     googletest
