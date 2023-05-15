@@ -13,12 +13,13 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+set(source_files
+    src/tic_tac_toe.cc)
+
 add_executable(
     tic_tac_toe
     main.cc
-    # src/state.hh
-    src/tic_tac_toe.cc
-    # src/tic_tac_toe.hh
+    ${source_files}
 )
 
 enable_testing()
@@ -26,6 +27,7 @@ enable_testing()
 add_executable(
     ttt_test
     test/ttt_test.cc
+    ${source_files}
 )
 target_link_libraries(
     ttt_test
