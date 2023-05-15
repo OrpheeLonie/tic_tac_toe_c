@@ -12,6 +12,8 @@ namespace tic_tac_toe
         TicTacToe(std::array<State, 9> s);
         TicTacToe();
 
+        int AssertMoveIsValid(std::string move);
+
         friend std::ostream &operator<<(std::ostream &out, const TicTacToe &t);
 
     private:

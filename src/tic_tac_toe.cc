@@ -12,6 +12,12 @@ namespace tic_tac_toe
         : TicTacToe(std::array<State, 9>{{}})
     {}
 
+    int TicTacToe::AssertMoveIsValid(std::string move)
+    {
+        move=move;
+        return 0;
+    }
+
     std::ostream &operator<<(std::ostream &out, const TicTacToe &t)
     {
         out << "  a   b   c\n0";
