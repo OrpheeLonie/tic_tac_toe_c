@@ -12,6 +12,9 @@ all: $(BIN)
 $(BIN): $(OBJ)
 	$(LINK.cc) $^ $(LDLIBS) -o $@
 
+run: $(BIN)
+	./$(BIN)
+
 clean:
 	$(RM) $(OBJ) $(BIN)
 

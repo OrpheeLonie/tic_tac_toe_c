@@ -10,14 +10,27 @@ namespace tic_tac_toe
 
     std::ostream &operator<<(std::ostream &out, const TicTacToe &t)
     {
-        for (int i = 0; i < 3; i++)
+        out << "  a   b   c\n0";
+        for (int i = 0; i < 9; i++)
         {
-            for (int j = 0; j < 3; j++)
-            {
-                out << t.board_[i*3+j] << ' ';
-            }
+            out << ' ' << t.board_[i];
 
-            out << '\n';
+            switch(i)
+            {
+                case 2:
+                case 5:
+                    out << "\n ---+---+---\n" << (i+1)/3;
+                    break;
+
+                case 8:
+                    out << '\n';
+                    break;
+
+                default:
+                    out << " |";
+                    break;
+
+            }
         }
 
         return out;
