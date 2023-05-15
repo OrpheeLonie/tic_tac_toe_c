@@ -1,7 +1,9 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -pedantic -std=c++2a
+CPPFLAGS = -Isrc/
 
-OBJ = main.o
+OBJ = main.o \
+	  src/tic_tac_toe.o
 
 BIN = main
 

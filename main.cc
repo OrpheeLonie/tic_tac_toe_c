@@ -1,8 +1,12 @@
 #include <iostream>
 
+#include "tic_tac_toe.hh"
+
 int main()
 {
-    std::cout << "Hello world\n";
+    tic_tac_toe::TicTacToe ticTacToe;
+
+    std::cout << ticTacToe;
 
     return 0;
 }
