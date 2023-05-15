@@ -4,8 +4,12 @@
 
 namespace tic_tac_toe
 {
+    TicTacToe::TicTacToe(std::array<State, 9> s)
+        : board_(s)
+    {}
+
     TicTacToe::TicTacToe()
-        : board_({{}})
+        : TicTacToe(std::array<State, 9>{{}})
     {}
 
     std::ostream &operator<<(std::ostream &out, const TicTacToe &t)
