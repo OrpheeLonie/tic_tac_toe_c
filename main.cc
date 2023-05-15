@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "tic_tac_toe.hh"
+#include "src/tic_tac_toe.hh"
 
 int main()
 {
