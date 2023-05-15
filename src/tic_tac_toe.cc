@@ -19,6 +19,23 @@ namespace tic_tac_toe
             && move[1] >= '0' && move[1] <= '2';
     }
 
+    int TicTacToe::PlayMove(State player, std::string move)
+    {
+        if (!this->IsMoveValid(move) || player == State::EMPTY)
+            return 0;
+
+        int x = move[0] - 'a';
+        int y = move[1] - '0';
+        int index = y*3 + x;
+
+        if (board_[index] != State::EMPTY)
+            return 0;
+
+        board_[index] = player;
+
+        return 1;
+    }
+
     std::ostream &operator<<(std::ostream &out, const TicTacToe &t)
     {
         out << "  a   b   c\n0";

@@ -78,6 +78,25 @@ namespace tic_tac_toe
             EXPECT_FALSE(output) << "move: " << in;
         }
     }
+
+    TEST_F(TicTacToeTest, test_play_move_valid_move)
+    {
+        // Given
+        tic_tac_toe::TicTacToe ttt;
+        std::string expected_output = "  a   b   c\n0 O |   |  \n ---+---+---\n1   | X |  \n ---+---+---\n2   |   |  \n";
+        std::ostringstream out;
+
+        // When
+        EXPECT_TRUE(ttt.PlayMove(State::O, "a0"));
+        EXPECT_TRUE(ttt.PlayMove(State::X, "b1"));
+        EXPECT_FALSE(ttt.PlayMove(State::O, "b1"));
+        EXPECT_FALSE(ttt.PlayMove(State::EMPTY, "a1"));
+        EXPECT_FALSE(ttt.PlayMove(State::EMPTY, "c21"));
+        out<<ttt;
+
+        // Then
+        EXPECT_EQ(out.str(), expected_output);
+    }
 }
 
 int main(int argc, char **argv) {
