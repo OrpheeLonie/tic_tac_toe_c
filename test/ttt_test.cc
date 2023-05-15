@@ -97,6 +97,32 @@ namespace tic_tac_toe
         // Then
         EXPECT_EQ(out.str(), expected_output);
     }
+
+    TEST_F(TicTacToeTest, test_is_win)
+    {
+        // Given
+        tic_tac_toe::TicTacToe fist_line_O(std::array<State, 9>{{State::O, State::O, State::O}});
+        tic_tac_toe::TicTacToe fist_line_X(std::array<State, 9>{{State::X, State::X, State::X}});
+        tic_tac_toe::TicTacToe second_line(std::array<State, 9>{{State::EMPTY, State::EMPTY, State::EMPTY, State::X, State::X, State::X}});
+        tic_tac_toe::TicTacToe diagonal(std::array<State, 9>{{State::O, State::EMPTY, State::EMPTY, State::EMPTY, State::O, State::X, State::X, State::EMPTY, State::O}});
+        tic_tac_toe::TicTacToe first_column(std::array<State, 9>{{State::O, State::EMPTY, State::EMPTY, State::O, State::O, State::X, State::O}});
+        tic_tac_toe::TicTacToe second_column(std::array<State, 9>{{State::EMPTY, State::X, State::EMPTY, State::EMPTY, State::X, State::EMPTY, State::EMPTY, State::X}});
+
+        tic_tac_toe::TicTacToe empty_board;
+        tic_tac_toe::TicTacToe not_win(std::array<State, 9>{{State::O, State::X, State::O}});
+
+        // When
+        // Then
+        EXPECT_TRUE(fist_line_O.IsWin());
+        EXPECT_TRUE(fist_line_X.IsWin());
+        EXPECT_TRUE(second_line.IsWin());
+        EXPECT_TRUE(diagonal.IsWin());
+        EXPECT_TRUE(first_column.IsWin());
+        EXPECT_TRUE(second_column.IsWin());
+
+        EXPECT_FALSE(empty_board.IsWin());
+        EXPECT_FALSE(empty_board.IsWin());
+    }
 }
 
 int main(int argc, char **argv) {

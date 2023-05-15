@@ -14,6 +14,7 @@ namespace tic_tac_toe
 
         int IsMoveValid(std::string move);
         int PlayMove(State player, std::string move);
+        int IsWin();
 
         friend std::ostream &operator<<(std::ostream &out, const TicTacToe &t);
 
