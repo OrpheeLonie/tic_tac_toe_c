@@ -5,7 +5,7 @@
 namespace tic_tac_toe
 {
     TicTacToe::TicTacToe()
-        : board_({{State::EMPTY}})
+        : board_({{}})
     {}
 
     std::ostream &operator<<(std::ostream &out, const TicTacToe &t)
