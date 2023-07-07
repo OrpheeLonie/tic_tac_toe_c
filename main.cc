@@ -24,6 +24,8 @@ int main()
         player = player == tic_tac_toe::State::O ? tic_tac_toe::State::X : tic_tac_toe::State::O;
     }
 
+    std::cout << ticTacToe;
+
     if (ticTacToe.IsWin())
     {
         player = player == tic_tac_toe::State::O ? tic_tac_toe::State::X : tic_tac_toe::State::O;
